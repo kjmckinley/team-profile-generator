@@ -2,7 +2,7 @@
 // Required links to be used as variable constants
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generatePage = require('./src/page-template.js')
+const populatePage = require('./src/page-template.js')
 const nameFormatter = require('./utils/helper');
 const everyEmployee = [];
 
@@ -176,6 +176,6 @@ const writeToPage = (htmlContent) => {
 console.log(`Welcome to the Team Profile Generator! Please follow the prompts below and create your team!`);
 
 userPrompt()
-    .then(data => generatePage(data))
-    .then(generateHtml => writeToPage(generateHtml))
+    .then(data => populatePage(data))
+    .then(populateHtml => writeToPage(populateHtml))
     .catch(err => console.log(err));

@@ -65,7 +65,7 @@ const addEmployee = employeeInfo => {
 };
 
 // pushes user imput into the index.html file
-const generatePage = templateData => {
+const populatePage = templateData => {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -99,4 +99,4 @@ const generatePage = templateData => {
     `;
 };
 
-module.exports = generatePage;
+module.exports = populatePage;
