@@ -175,7 +175,7 @@ const writeToPage = (htmlContent) => {
 // generates questions
 console.log(`Welcome to the Team Profile Generator! Please follow the prompts below and create your team!`);
 
-promptUser()
+userPrompt()
     .then(data => generatePage(data))
-    .then(generateHtml => writePage(generateHtml))
+    .then(generateHtml => writeToPage(generateHtml))
     .catch(err => console.log(err));
