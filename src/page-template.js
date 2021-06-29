@@ -36,3 +36,29 @@ const addEmployee = employeeInfo => {
             default:
                 newEmployee = new Employee(nameFormatter(firstName), nameFormatter(lastName), id);
         };
+        // equation to concatenates all employee cards to html
+        allCards += `
+            <div class="column is-one-quarter-desktop">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                ${newEmployee.getIcon()}
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">${newEmployee.getName()}</p>
+                                <p class="subtitle is-6">${newEmployee.getRole()}</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>${newEmployee.getId()}<br />
+                            ${newEmployee.getEmail()}<br />
+                            ${extraInfo}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>`  
+    });
+    
+    return allCards;
+};
