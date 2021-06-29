@@ -143,3 +143,31 @@ const questions = [
         default: true
     }
 ]
+
+// generates questions given to the user to create employees
+const userPrompt = () => {
+
+    return inquirer.prompt(questions)
+    .then(userResponse => {
+
+        // adds to employee data array
+        everyEmployee.push(userResponse);
+
+        // adds another employee based on user selection
+        if (userResponse.addEmployee) {
+            return userPrompt();
+        } else {
+            return everyEmployee;
+        };
+    });
+};
+
+// generates answers into html
+const writeToPage = (htmlContent) => {
+    fs.writeFile('./dist/index.html', htmlContent, err => {
+        if (err) {
+            throw err
+        };
+        console.log('Page created successfully!');
+    });
+};
