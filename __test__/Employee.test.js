@@ -14,22 +14,22 @@ test('creates a employee object', () => {
     expectStr(employee.email, '@');
 });
 
-test('gets employee\'s icon', () => {
+test('gets the new employee\'s icon', () => {
     expectStr(employee.getIcon(), employee.icon);
 });
 
-test('gets employee\'s name', () => {
+test('gets new employee\'s name', () => {
     expectStr(employee.getName(), `${employee.firstName} ${employee.lastName}`);
 });
 
-test('gets employee\'s role', () => {
+test('gets the new employee\'s role', () => {
     expectStr(employee.getRole(), employee.role);
 });
 
-test('gets employee\'s ID', () => {
+test('gets the new employee\'s ID', () => {
     expectStr(employee.getId(), `${employee.id}`);
 });
 
-test('gets employee\'s email', () => {
+test('gets the new employee\'s email', () => {
     expectStr(employee.getEmail(), employee.email);
 });

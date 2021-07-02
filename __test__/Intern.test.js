@@ -3,9 +3,9 @@
 const Intern = require('../lib/Intern');
 const { expectToBe, expectStr, expectNum } = require('../utils/expect');
 
-const intern = new Intern('Clark', 'Kent', 1, 'UCF');
+const intern = new Intern('Clark', 'Kent', 1, 'UT');
 
-test('creates an intern object', () => {
+test('creates a new intern object', () => {
     expectToBe(intern.icon, 'fas fa-scroll');
     expectToBe(intern.firstName, 'Clark');
     expectToBe(intern.lastName, 'Kent');
@@ -15,26 +15,26 @@ test('creates an intern object', () => {
     expectStr(intern.email, '@');
 });
 
-test('gets intern\'s icon', () => {
+test('gets the new intern\'s icon', () => {
     expectStr(intern.getIcon(), intern.icon);
 });
 
-test('gets intern\'s name', () => {
+test('gets the new intern\'s name', () => {
     expectStr(intern.getName(), `${intern.firstName} ${intern.lastName}`);
 });
 
-test('gets intern\'s role', () => {
+test('gets the new intern\'s role', () => {
     expectStr(intern.getRole(), intern.role);
 });
 
-test('gets intern\'s ID', () => {
+test('gets the new intern\'s ID', () => {
     expectStr(intern.getId(), `${intern.id}`);
 });
 
-test('gets intern\'s school', () => {
+test('gets the new intern\'s school', () => {
     expectStr(intern.getSchool(), intern.school);
 });
 
-test('gets intern\'s email', () => {
+test('gets the new intern\'s email', () => {
     expectStr(intern.getEmail(), intern.email);
 });
