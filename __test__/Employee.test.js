@@ -1,19 +1,29 @@
+// test for adding an employee
+
 const Employee = require ('../lib/Employee');
 const { expectToBe, expectStr, expectNum } = require('../utils/expect');
 
-const employee = new Employee('John', 'Doe', 1);
+const employee = new Employee('The', 'Doctor', 1);
 
 test('creates a employee object', () => {
-    expectToBe(employee.firstName,'John');
-    expectToBe(employee.lastName, 'Doe');
+    expectToBe(employee.icon, 'fas fa-user-ties');
+    expectToBe(employee.firstName,'The');
+    expectToBe(employee.lastName, 'Doctor');
+    expectToBe(employee.role, 'Employee');
     expectNum(employee.id);
     expectStr(employee.email, '@');
-    expectToBe(employee.role, 'Employee');
-    expectToBe(employee.icon, 'fas fa-user-ties');
+});
+
+test('gets employee\'s icon', () => {
+    expectStr(employee.getIcon(), employee.icon);
 });
 
 test('gets employee\'s name', () => {
     expectStr(employee.getName(), `${employee.firstName} ${employee.lastName}`);
+});
+
+test('gets employee\'s role', () => {
+    expectStr(employee.getRole(), employee.role);
 });
 
 test('gets employee\'s ID', () => {
@@ -22,12 +32,4 @@ test('gets employee\'s ID', () => {
 
 test('gets employee\'s email', () => {
     expectStr(employee.getEmail(), employee.email);
-});
-
-test('gets employee\'s role', () => {
-    expectStr(employee.getRole(), employee.role);
-});
-
-test('gets employee\'s icon', () => {
-    expectStr(employee.getIcon(), employee.icon);
 });

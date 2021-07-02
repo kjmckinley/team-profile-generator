@@ -1,16 +1,18 @@
+// test for adding a manager
+
 const Manager = require ('../lib/Manager');
 const { expectToBe, expectStr, expectNum } = require('../utils/expect');
 
-const manager = new Manager('John', 'Doe', 1, 1);
+const manager = new Manager('Barry', 'Allen', 1, 1);
 
 test('creates a manager object', () => {
-    expectToBe(manager.firstName,'John');
-    expectToBe(manager.lastName, 'Doe');
-    expectNum(manager.id);
-    expectStr(manager.email, '@');
-    expectToBe(manager.role, 'Manager');
-    expectNum(manager.officeNumber);
     expectToBe(manager.icon, 'fab fa-mandalorian');
+    expectToBe(manager.firstName,'Barry');
+    expectToBe(manager.lastName, 'Allen');
+    expectToBe(manager.role, 'Manager');
+    expectNum(manager.id);
+    expectNum(manager.officeNumber);
+    expectStr(manager.email, '@');
 });
 
 test('gets manager\'s icon', () => {

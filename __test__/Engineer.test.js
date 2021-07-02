@@ -1,19 +1,29 @@
+// test for creating an engineer
+
 const Engineer = require('../lib/Engineer');
 const { expectToBe, expectStr, expectNum } = require('../utils/expect');
 
-const engineer = new Engineer('John', 'Doe', 1, 'jamescodes');
+const engineer = new Engineer('Peter', 'Parker', 1, 'jamescodes');
 
 test('creates an engineer object', () => {
-    expectToBe(engineer.firstName, 'John');
-    expectToBe(engineer.lastName, 'Doe');
+    expectToBe(engineer.icon, 'fas fa-flask');
+    expectToBe(engineer.firstName, 'Peter');
+    expectToBe(engineer.lastName, 'Parker');
+    expectToBe(engineer.role, 'Engineer');
     expectNum(engineer.id);
     expectStr(engineer.email, '@');
-    expectToBe(engineer.role, 'Engineer');
-    expectToBe(engineer.icon, 'fas fa-flask');
+});
+
+test('gets engineer\'s icon', () => {
+    expectStr(engineer.getIcon(), engineer.icon);
 });
 
 test('gets engineer\'s name', () => {
     expectStr(engineer.getName(), `${engineer.firstName} ${engineer.lastName}`);
+});
+
+test('gets engineer\'s role', () => {
+    expectStr(engineer.getRole(), engineer.role);
 });
 
 test('gets engineer\'s ID', () => {
@@ -24,14 +34,7 @@ test('gets engineer\'s email', () => {
     expectStr(engineer.getEmail(), engineer.email);
 });
 
-test('gets engineer\'s role', () => {
-    expectStr(engineer.getRole(), engineer.role);
-});
-
 test('gets engineer\'s github', () => {
     expectStr(engineer.Github(), engineer.github);
 });
 
-test('gets engineer\'s icon', () => {
-    expectStr(engineer.getIcon(), engineer.icon);
-});
