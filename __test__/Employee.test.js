@@ -3,7 +3,7 @@
 const Employee = require ('../lib/Employee');
 const { expectToBe, expectStr, expectNum } = require('../utils/expect');
 
-const employee = new Employee('The', 'Doctor', 1);
+const employee = new Employee('The', 'Doctor', 11);
 
 test('creates a employee object', () => {
     expectToBe(employee.icon, 'fas fa-user-ties');

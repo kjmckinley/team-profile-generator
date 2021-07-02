@@ -11,7 +11,7 @@ test('creates a new intern object', () => {
     expectToBe(intern.lastName, 'Kent');
     expectToBe(intern.role, 'Intern');
     expectNum(intern.id);
-    expectToBe(intern.school, 'UCF');
+    expectToBe(intern.school, 'UT');
     expectStr(intern.email, '@');
 });
 

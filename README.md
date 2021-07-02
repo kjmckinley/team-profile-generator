@@ -11,7 +11,11 @@ SO THAT I have quick access to their emails and GitHub profiles
 ```
 
 ## Demo
-the following is a video example of how the application works
+
+The following animation demonstrates how all the tests pass the test given by the jest package
+![.gif of tests passing](./assets/test_passed.gif)
+
+The following is a video example of how the application works
 ![.gif demo of how the application works](./assets/node_index_example.gif)
 
 The following image shows the generated HTML’s appearance and functionality. The styling in the image is just an example, so feel free to add your own styles:
